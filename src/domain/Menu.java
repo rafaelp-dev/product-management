@@ -48,7 +48,36 @@ public class Menu {
 
     public void listAllProducts(){
         for (Product product : products){
-            System.out.println(product.getProductId() + " " + product.getName() + " " + product.getPrice() + " " + product.getQuantity());
+            System.out.println("ID: " + product.getProductId() + " " + "Nome: " + product.getName() + " " + "Preço: " + product.getPrice() + " " + "Quantidade: " + product.getQuantity());
+        }
+    }
+
+    public void updateProductData(){
+        listAllProducts();
+        System.out.println("Qual o ID do produto que quer atualizar?");
+        int choice = scanner.nextInt();
+        scanner.nextLine();
+
+        for (Product product : products){
+            if (choice == product.getProductId()){
+                System.out.println("Digite o novo nome: ");
+                String name = scanner.nextLine();
+
+                System.out.println("Digite o novo preço: ");
+                double price = scanner.nextDouble();
+
+                System.out.println("Digite a nova quantidade: ");
+                int quantity = scanner.nextInt();
+                scanner.nextLine();
+
+                product.setName(name);
+                product.setPrice(price);
+                product.setQuantity(quantity);
+
+                System.out.println("Produto atualizado com sucesso!");
+            }
+
+            System.out.println("Produto com ID" + choice + "não encontrado");
         }
     }
 }
