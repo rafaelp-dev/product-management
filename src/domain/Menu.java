@@ -7,9 +7,29 @@ public class Menu {
     Scanner scanner = new Scanner(System.in);
     ArrayList<Product> products = new ArrayList<>();
 
-    public void menuText(){
-        System.out.println("--- Gerenciador de Produtos ---");
-        System.out.println("1. Cadastrar um produto \n2. Listar todos os produtos \n3. Atualizar dados de um produto \n4. Deletar um produto \n5. Sair");
+    public void menuText() {
+        boolean i = true;
+
+        while (i) {
+            System.out.println("--- Gerenciador de Produtos ---");
+            System.out.println("1. Cadastrar um produto \n2. Listar todos os produtos \n3. Atualizar dados de um produto \n4. Deletar um produto \n5. Sair");
+            System.out.println("Digite sua escolha: ");
+            int choice = scanner.nextInt();
+
+            scanner.nextLine();
+            switch (choice) {
+                case 1:
+                    addProduct();
+                    break;
+
+                case 2:
+                    listAllProducts();
+                    break;
+
+                default:
+                    System.out.println("Opção inválida");
+            }
+        }
     }
 
     public void addProduct(){
@@ -31,5 +51,4 @@ public class Menu {
             System.out.println(product.getProductId() + " " + product.getName() + " " + product.getPrice() + " " + product.getQuantity());
         }
     }
-
 }
