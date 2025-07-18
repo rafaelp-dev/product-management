@@ -25,4 +25,10 @@ public class Menu {
         Product product = new Product(name, price, quantity);
         products.add(product);
     }
+
+    public void listAllProducts(){
+        for (Product product : products){
+            System.out.println(product.getName() + " " + product.getPrice() + " " + product.getQuantity());
+        }
+    }
 }
