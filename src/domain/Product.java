@@ -1,11 +1,14 @@
 package domain;
 
 public class Product {
+    private static int id = 1;
+    private int productId;
     private String name;
     private double price;
     private int quantity;
 
     public Product(String name, double price, int quantity) {
+        this.productId = id++;
         this.name = name;
         this.price = price;
         this.quantity = quantity;
@@ -33,5 +36,13 @@ public class Product {
 
     public void setQuantity(int quantity) {
         this.quantity = quantity;
+    }
+
+    public int getProductId() {
+        return productId;
+    }
+
+    public void setProductId(int productId) {
+        this.productId = productId;
     }
 }

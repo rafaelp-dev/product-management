@@ -28,7 +28,8 @@ public class Menu {
 
     public void listAllProducts(){
         for (Product product : products){
-            System.out.println(product.getName() + " " + product.getPrice() + " " + product.getQuantity());
+            System.out.println(product.getProductId() + " " + product.getName() + " " + product.getPrice() + " " + product.getQuantity());
         }
     }
+
 }
