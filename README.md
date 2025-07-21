@@ -9,12 +9,12 @@ Este projeto é uma aplicação simples de linha de comando para gerenciar produ
 - Encerrar o programa
 
 ## 🧱 Estrutura do Projeto
-src/<br>
-├── app/<br>
-   └──App.java<br>
-├── domain/<br>
-   ├── Menu.java // Interface de interação com o usuário (menu CLI)<br>
-   └── Product.java //  Classe que representa o produto<br>
+- src
+  - app
+    - App.java
+  - domain
+    - Menu.java       // Interface de interação com o usuário (menu CLI)
+    - Product.java    // Classe que representa o produto
 
 ## Tecnologias Utilizadas
 - Java 21
