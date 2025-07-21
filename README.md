@@ -11,7 +11,7 @@ Este projeto é uma aplicação simples de linha de comando para gerenciar produ
 ## 🧱 Estrutura do Projeto
 src/ <br>
 app/
-- App.java
+- App.java <br>
 domain/<br>
 - Menu.java // Interface de interação com o usuário (menu CLI)
 - Product.java // Classe que representa o produto
