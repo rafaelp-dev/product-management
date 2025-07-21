@@ -8,8 +8,7 @@ Este projeto é uma aplicação simples de linha de comando para gerenciar produ
 - Deletar um produto da lista (pelo ID)
 - Encerrar o programa
 
-## 🧱 Estrutura do Projeto
-## 🧱 Estrutura do Projeto
+## Estrutura do Projeto
 ```
 src/
 ├── app/
