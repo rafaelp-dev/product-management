@@ -28,9 +28,16 @@ public class Menu {
                     break;
 
                 case 3:
+                    updateProductData();
                     break;
 
                 case 4:
+                    deleteProduct();
+                    break;
+
+                case 5:
+                    System.out.println("Encerrado o programa...");
+                    i = false;
                     break;
 
                 default:
@@ -51,11 +58,13 @@ public class Menu {
 
         Product product = new Product(name, price, quantity);
         products.add(product);
+
+        System.out.println("Produto adicionado com sucesso!");
     }
 
     public void listAllProducts(){
         for (Product product : products){
-            System.out.println("ID: " + product.getProductId() + " " + "Nome: " + product.getName() + " " + "Preço: " + product.getPrice() + " " + "Quantidade: " + product.getQuantity());
+            System.out.println("ID: " + product.getProductId() + "\n" + "Nome: " + product.getName() + "\n" + "Preço: " + product.getPrice() + "\n" + "Quantidade: " + product.getQuantity());
         }
     }
 
@@ -65,6 +74,7 @@ public class Menu {
         int choice = scanner.nextInt();
         scanner.nextLine();
 
+        boolean found = false;
         for (Product product : products){
             if (product.getProductId() == choice){
                 System.out.println("Digite o novo nome: ");
@@ -82,9 +92,13 @@ public class Menu {
                 product.setQuantity(quantity);
 
                 System.out.println("Produto atualizado com sucesso!");
+                found = true;
+                break;
             }
 
-            System.out.println("Produto com ID" + choice + "não encontrado");
+            if (!found){
+                System.out.println("Produto com ID " + choice + " não encontrado");
+            }
         }
     }
 
