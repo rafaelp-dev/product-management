@@ -1,6 +1,7 @@
 package domain;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.Scanner;
 
 public class Menu {
@@ -24,6 +25,12 @@ public class Menu {
 
                 case 2:
                     listAllProducts();
+                    break;
+
+                case 3:
+                    break;
+
+                case 4:
                     break;
 
                 default:
@@ -59,7 +66,7 @@ public class Menu {
         scanner.nextLine();
 
         for (Product product : products){
-            if (choice == product.getProductId()){
+            if (product.getProductId() == choice){
                 System.out.println("Digite o novo nome: ");
                 String name = scanner.nextLine();
 
@@ -80,4 +87,28 @@ public class Menu {
             System.out.println("Produto com ID" + choice + "não encontrado");
         }
     }
+
+    public void deleteProduct() {
+        listAllProducts();
+        System.out.println("Digite o ID do produto que deseja deletar: ");
+        int choice = scanner.nextInt();
+
+        boolean removed = false;
+
+        Iterator<Product> iterator = products.iterator();
+        while (iterator.hasNext()) {
+            Product product = iterator.next();
+            if (product.getProductId() == choice) {
+                iterator.remove(); // forma segura de remover durante iteração
+                System.out.println("Produto removido com sucesso.");
+                removed = true;
+                break;
+            }
+        }
+
+        if (!removed) {
+            System.out.println("Produto com ID " + choice + " não encontrado.");
+        }
+    }
+
 }
