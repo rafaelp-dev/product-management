@@ -10,7 +10,7 @@ Este projeto é uma aplicação simples de linha de comando para gerenciar produ
 
 ## 🧱 Estrutura do Projeto
 src/ <br>
-app/ <br>
+app/
 - App.java
 domain/<br>
 - Menu.java // Interface de interação com o usuário (menu CLI)
