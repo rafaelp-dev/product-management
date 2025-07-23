@@ -68,17 +68,6 @@ public class Menu {
         }
     }
 
-    public void findProductId(){
-        System.out.println("Digite o ID do produto: ");
-        int choice = scanner.nextInt();
-
-        for (Product product : products){
-            if (product.getProductId() == choice){
-                System.out.println("ID: " + product.getProductId() + "\n" + "Nome: " + product.getName() + "\n" + "Preço: " + product.getPrice() + "\n" + "Quantidade: " + product.getQuantity());
-            }
-        }
-    }
-
     public void updateProductData(){
         listAllProducts();
         System.out.println("Qual o ID do produto que quer atualizar?");
@@ -106,10 +95,10 @@ public class Menu {
                 found = true;
                 break;
             }
-
-            if (!found){
-                System.out.println("Produto com ID " + choice + " não encontrado");
             }
+
+        if (!found){
+            System.out.println("Produto com ID " + choice + " não encontrado");
         }
     }
 
