@@ -64,7 +64,8 @@ public class Menu {
 
     public void listAllProducts(){
         for (Product product : products){
-            System.out.println("ID: " + product.getProductId() + "\n" + "Nome: " + product.getName() + "\n" + "Preço: " + product.getPrice() + "\n" + "Quantidade: " + product.getQuantity());
+            System.out.printf("ID: %d | Nome: %s | Preço: R$ %.2f | Quantidade: %d%n",
+                    product.getProductId(), product.getName(), product.getPrice(), product.getQuantity());
         }
     }
 
