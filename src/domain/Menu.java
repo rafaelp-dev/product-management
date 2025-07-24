@@ -1,6 +1,7 @@
 package domain;
 
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.Iterator;
 import java.util.Scanner;
 
@@ -15,33 +16,38 @@ public class Menu {
             System.out.println("--- Gerenciador de Produtos ---");
             System.out.println("1. Cadastrar um produto \n2. Listar todos os produtos \n3. Atualizar dados de um produto \n4. Deletar um produto \n5. Sair");
             System.out.println("Digite sua escolha: ");
-            int choice = scanner.nextInt();
+            try {
+                int choice = scanner.nextInt();
 
-            scanner.nextLine();
-            switch (choice) {
-                case 1:
-                    addProduct();
-                    break;
+                scanner.nextLine();
+                switch (choice) {
+                    case 1:
+                        addProduct();
+                        break;
 
-                case 2:
-                    listAllProducts();
-                    break;
+                    case 2:
+                        listAllProducts();
+                        break;
 
-                case 3:
-                    updateProductData();
-                    break;
+                    case 3:
+                        updateProductData();
+                        break;
 
-                case 4:
-                    deleteProduct();
-                    break;
+                    case 4:
+                        deleteProduct();
+                        break;
 
-                case 5:
-                    System.out.println("Encerrado o programa...");
-                    i = false;
-                    break;
+                    case 5:
+                        System.out.println("Encerrado o programa...");
+                        i = false;
+                        break;
 
-                default:
-                    System.out.println("Opção inválida");
+                    default:
+                        System.out.println("Opção inválida");
+                }
+            }catch (InputMismatchException e){
+                System.out.println("Opção inválida, tente novamente");
+                scanner.nextLine();
             }
         }
     }
@@ -95,7 +101,7 @@ public class Menu {
                 System.out.println("Produto atualizado com sucesso!");
                 found = true;
                 break;
-            }
+                }
             }
 
         if (!found){
